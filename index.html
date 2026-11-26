@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>An Namiroh Travelindo - Panggungrejo Pasuruan</title>
+  <style>
+    :root {
+      --hijau-tua: #0d4f28;
+      --hijau-utama: #198754;
+      --hijau-muda: #eaf7ef;
+      --emas: #c59b27;
+      --teks: #1f2933;
+      --putih: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #ffffff 0%, #e7f6ed 45%, #c7ebd5 100%);
+      color: var(--teks);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px 18px 60px;
+    }
+
+    /* Header */
+    .hero {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(226, 246, 233, 0.95) 100%);
+      border: 1px solid #b7e2c7;
+      border-radius: 20px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(13, 79, 40, 0.08);
+      margin-bottom: 28px;
+    }
+
+    .logo-box {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid var(--emas);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .badge-akreditasi {
+      display: inline-block;
+      background: var(--hijau-tua);
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      color: var(--hijau-tua);
+      font-size: 1.9rem;
+      margin-bottom: 6px;
+    }
+
+    .subjudul {
+      color: #3b5249;
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--hijau-utama), var(--hijau-tua));
+      color: #ffffff;
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: var(--hijau-tua);
+      border: 2px solid var(--hijau-utama);
+    }
+
+    /* Section Card */
+    .section {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #cce9d7;
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 20px rgba(13, 79, 40, 0.05);
+    }
+
+    .section h2 {
+      color: var(--hijau-tua);
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #d5efe0;
+    }
+
+    /* Grid Paket */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #ffffff 0%, #f3fbf6 100%);
+      border: 1px solid #bce3cb;
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .card h3 {
+      color: var(--hijau-utama);
+      margin-bottom: 8px;
+      font-size: 1.15rem;
+    }
+
+    .harga {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--hijau-tua);
+      margin: 10px 0;
+    }
+
+    .meta {
+      font-size: 0.92rem;
+      color: #394e45;
+      margin-bottom: 6px;
+    }
+
+    /* Tabel */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid #c6e6d2;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+      background: #ffffff;
+      font-size: 0.92rem;
+    }
+
+    th {
+      background: linear-gradient(135deg, var(--hijau-utama), var(--hijau-tua));
+      color: #ffffff;
+      padding: 11px 12px;
+      text-align: left;
+    }
+
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #e3f2e8;
+    }
+
+    tr:nth-child(even) td {
+      background: #f7fcf9;
+    }
+
+    .catatan-list {
+      margin-top: 12px;
+      padding-left: 20px;
+      font-size: 0.9rem;
+      color: #364b42;
+    }
+
+    /* Kontak & Sosmed */
+    .kontak-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .kontak-box {
+      background: #f4fbf7;
+      border: 1px solid #bfe4cd;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .kontak-box strong {
+      display: block;
+      color: var(--hijau-tua);
+      margin-bottom: 6px;
+    }
+
+    .kontak-box a {
+      color: var(--hijau-utama);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .kontak-box a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.88rem;
+      color: #3a5248;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero -->
+    <header class="hero">
+      <div class="logo-box">
+        <!-- Ganti src dengan nama file logo di repo kamu, misal: logo.png -->
+        <img src="Desain tanpa judul.jpg" alt="Logo An Namiroh Travelindo Panggungrejo Pasuruan" onerror="this.style.display='none'" />
+      </div>
+      <div class="badge-akreditasi">Biro Travel Akreditasi A • PPIU No. 949/2019 • PIHK No. 151/2021</div>
+      <h1>AN NAMIROH TRAVELINDO</h1>
+      <p class="subjudul">Cabang Panggungrejo, Pasuruan — Layanan Umrah, Promo Paket &amp; Pembiayaan Syariah (Support Amitra)</p>
+      <div class="btn-group">
+        <a class="btn btn-primary" href="https://wa.me/6283852155055?text=Assalamualaikum%20Admin%20Berlina%2C%20saya%20ingin%20info%20paket%20Umrah%20An%20Namiroh." target="_blank" rel="noopener">Chat Admin Berlina (WA)</a>
+        <a class="btn btn-primary" href="https://wa.me/628133305705?text=Assalamualaikum%20Admin%20Nanda%2C%20saya%20ingin%20info%20paket%20Umrah%20An%20Namiroh." target="_blank" rel="noopener">Chat Admin Nanda (WA)</a>
+        <a class="btn btn-outline" href="#pembiayaan">Skema Umrah Dulu Bayar Nanti</a>
+      </div>
+    </header>
+
+    <!-- Promo 2 Gratis 1 -->
+    <section class="section">
+      <h2>Promo Umrah 2 Gratis 1 (12 Hari)</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Keberangkatan 10 Desember 2026</h3>
+          <p class="meta"><strong>Rute:</strong> SUB - JED (Transit)</p>
+          <p class="meta"><strong>Hotel Madinah (3 Malam):</strong> Burj Mawaddah / setaraf</p>
+          <p class="meta"><strong>Hotel Makkah (7 Malam):</strong> Tallaye Hotel / setaraf</p>
+          <p class="meta"><strong>Seat Tersedia:</strong> 24 Seat</p>
+          <div class="harga">Mulai Rp 42.500.000 / orang</div>
+        </div>
+        <div class="card">
+          <h3>Keberangkatan 10 Januari 2027*</h3>
+          <p class="meta"><strong>Rute:</strong> SUB - JED (Transit)</p>
+          <p class="meta"><strong>Hotel Madinah (3 Malam):</strong> Burj Mawaddah / setaraf</p>
+          <p class="meta"><strong>Hotel Makkah (7 Malam):</strong> Tallaye Hotel / setaraf</p>
+          <p class="meta"><strong>Seat Tersedia:</strong> 27 Seat</p>
+          <div class="harga">Mulai Rp 42.500.000 / orang</div>
+        </div>
+      </div>
+      <p class="subjudul" style="margin-top: 12px; font-size: 0.85rem;">*Catatan pada brosur promo tertulis 10 Januari 2026; sesuaikan tahun keberangkatan bila diperlukan saat konfirmasi admin.</p>
+    </section>
+
+    <!-- Jadwal Umrah Syawal Maret 2027 -->
+    <section class="section">
+      <h2>Dibuka Umrah Syawal — Keberangkatan Maret 2027 (Lion Air)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Durasi</th>
+              <th>Tanggal &amp; Rute</th>
+              <th>Hotel Madinah</th>
+              <th>Hotel Makkah</th>
+              <th>Harga / Pax</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>16 Hari</strong></td>
+              <td>7 Maret 2027<br />Surabaya - Jeddah</td>
+              <td>Burj Mawadah / setaraf (5N)</td>
+              <td>Talayie / setaraf (9N)</td>
+              <td><strong>Rp 36.700.000</strong></td>
+            </tr>
+            <tr>
+              <td><strong>12 Hari</strong></td>
+              <td>13 Maret 2027<br />Surabaya - Jeddah</td>
+              <td>Amjad Hotel / setaraf (4N)</td>
+              <td>Manazil Wisam / setaraf (6N)</td>
+              <td><strong>Rp 36.600.000</strong></td>
+            </tr>
+            <tr>
+              <td><strong>13 Hari</strong></td>
+              <td>16 Maret 2027<br />Surabaya - Jeddah</td>
+              <td>Amjad Hotel / setaraf (4N)</td>
+              <td>Manazil Wisam / setaraf (7N)</td>
+              <td><strong>Rp 37.100.000</strong></td>
+            </tr>
+            <tr>
+              <td><strong>16 Hari</strong></td>
+              <td>17 Maret 2027<br />Surabaya - Jeddah</td>
+              <td>Burj Mawadah / setaraf (5N)</td>
+              <td>Mather Jiwar / setaraf (9N)</td>
+              <td><strong>Rp 37.650.000</strong></td>
+            </tr>
+            <tr>
+              <td><strong>12 Hari</strong></td>
+              <td>20 Maret 2027<br />Surabaya - Jeddah</td>
+              <td>Amjad Hotel / setaraf (4N)</td>
+              <td>Midhal Al Ezz / setaraf (6N)</td>
+              <td><strong>Rp 36.650.000</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid-2" style="margin-top: 18px;">
+        <div class="card">
+          <h3>Harga Sudah Termasuk</h3>
+          <ul class="catatan-list">
+            <li>Tiket pesawat &amp; akomodasi selama di Saudi</li>
+            <li>Hotel &amp; makan</li>
+            <li>Muthowwif &amp; Tour Leader</li>
+            <li>Handling Indonesia &amp; Saudi</li>
+            <li>Visa &amp; Siskopatuh</li>
+            <li>Asuransi perjalanan umrah</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Harga Belum Termasuk &amp; Ketentuan</h3>
+          <ul class="catatan-list">
+            <li>Perlengkapan, paspor, serta vaksin meningitis &amp; polio</li>
+            <li>Jadwal dan harga sewaktu-waktu berubah menyesuaikan kurs dollar, riyal, maskapai, &amp; kebijakan pemerintah</li>
+            <li>Pelunasan maksimal H-30 hari keberangkatan; permintaan kamar Double/Triple mengikuti ketersediaan &amp; persetujuan hotel</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pembiayaan Umrah Amitra -->
+    <section id="pembiayaan" class="section">
+      <h2>Paket Promo Umrah Dulu Bayar Nanti (Support Amitra)</h2>
+      <p class="meta"><strong>DP Mulai 5 Juta</strong> (atau DP 15% sesuai skema) • <strong>Syarat Dokumen:</strong> KTP &amp; KK • <strong>Proses Pengajuan:</strong> 3 Hari • <strong>&lt; 35 Juta Tanpa Jaminan</strong></p>
+
+      <div class="table-wrap" style="margin-top: 14px;">
+        <table>
+          <thead>
+            <tr>
+              <th>Paket</th>
+              <th>DP 15%</th>
+              <th>Angsuran 12 Bln</th>
+              <th>Angsuran 24 Bln</th>
+              <th>Angsuran 36 Bln</th>
+              <th>Admin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Rp 23.000.000</td>
+              <td>Rp 3.450.000</td>
+              <td>Rp 1.945.000</td>
+              <td>Rp 1.134.000</td>
+              <td>Rp 874.000</td>
+              <td>Rp 1.000.000</td>
+            </tr>
+            <tr>
+              <td>Rp 25.000.000</td>
+              <td>Rp 3.750.000</td>
+              <td>Rp 2.114.000</td>
+              <td>Rp 1.233.000</td>
+              <td>Rp 950.000</td>
+              <td>Rp 1.000.000</td>
+            </tr>
+            <tr>
+              <td>Rp 30.000.000</td>
+              <td>Rp 4.500.000</td>
+              <td>Rp 2.537.000</td>
+              <td>Rp 1.479.000</td>
+              <td>Rp 1.140.000</td>
+              <td>Rp 1.000.000</td>
+            </tr>
+            <tr>
+              <td>Rp 35.000.000</td>
+              <td>Rp 5.250.000</td>
+              <td>Rp 2.960.000</td>
+              <td>Rp 1.726.000</td>
+              <td>Rp 1.329.000</td>
+              <td>Rp 1.000.000</td>
+            </tr>
+            <tr>
+              <td>Rp 40.000.000</td>
+              <td>Rp 6.000.000</td>
+              <td>Rp 3.382.000</td>
+              <td>Rp 1.972.000</td>
+              <td>Rp 1.519.000</td>
+              <td>Rp 1.000.000</td>
+            </tr>
+            <tr>
+              <td>Rp 45.000.000</td>
+              <td>Rp 6.750.000</td>
+              <td>Rp 3.805.000</td>
+              <td>Rp 2.219.000</td>
+              <td>Rp 1.709.000</td>
+              <td>Rp 1.000.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="subjudul" style="margin-top: 10px; font-size: 0.88rem;">Rincian lengkap paket Rp 23 jt – Rp 45 jt beserta asuransi dan total bayar pertama dapat ditanyakan langsung ke admin.</p>
+    </section>
+
+    <!-- Kontak Admin & Media Sosial -->
+    <section class="section">
+      <h2>Informasi, Booking &amp; Media Sosial</h2>
+      <div class="kontak-grid">
+        <div class="kontak-box">
+          <strong>WhatsApp Admin Berlina</strong>
+          <a href="https://wa.me/6283852155055" target="_blank" rel="noopener">0838-5215-5055</a>
+        </div>
+        <div class="kontak-box">
+          <strong>WhatsApp Admin Nanda</strong>
+          <a href="https://wa.me/628133305705" target="_blank" rel="noopener">0813-3305-705</a>
+        </div>
+        <div class="kontak-box">
+          <strong>Email Resmi</strong>
+          <a href="mailto:annamirohnnamiroh@gmail.com">annamirohnnamiroh@gmail.com</a>
+        </div>
+        <div class="kontak-box">
+          <strong>TikTok</strong>
+          <a href="https://www.tiktok.com/@an.namiroh.panggun" target="_blank" rel="noopener">@an.namiroh.panggun</a>
+        </div>
+        <div class="kontak-box">
+          <strong>Instagram</strong>
+          <a href="https://www.instagram.com/annamiropanggung" target="_blank" rel="noopener">@annamiropanggung</a>
+        </div>
+        <div class="kontak-box">
+          <strong>Facebook</strong>
+          <span>An-namiroh Panggungrejo Kota Pasuruan</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2026 An Namiroh Travelindo — Panggungrejo, Pasuruan.
+    </footer>
+  </div>
+</body>
+</html>
